@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #004080;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+}
+
+/* User Cards */
+.users {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.user-card {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-card button {
+    background: #004080;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.user-card button:hover {
+    background: #0055aa;
+}
+
+/* Spotlight Section */
+.spotlight {
+    margin: 2rem 0;
+}
+
+.spotlight ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.spotlight li {
+    margin: 0.5rem 0;
+}
+
+.spotlight a {
+    text-decoration: none;
+    color: #004080;
+}
+
+.spotlight a:hover {
+    text-decoration: underline;
+}
+
+/* App Links */
+.app-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.app-links img {
+    width: 150px;
+    margin: 0.5rem 0;
+}
+
+/* Footer */
+.footer {
+    background: #004080;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .users, .app-links {
+        grid-template-columns: 1fr;
+    }
+}
