@@ -1,0 +1,223 @@
+/* 🌟 General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* 🌟 Background Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 🔥 Floating Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease-in-out;
+    animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.navbar:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(5px);
+}
+
+/* 🔥 Navbar Glow */
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: 0.4s;
+}
+
+.nav-links li a:hover {
+    color: #ff5733;
+    text-shadow: 0 0 8px #ff5733;
+    transform: scale(1.1);
+}
+
+/* 🌟 Typing Animation for Headings */
+.hero-content h1 {
+    font-size: 3rem;
+    border-right: 3px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 4s steps(40, end) forwards, blink 0.6s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* 🔥 Hero Buttons */
+.hero-buttons .btn {
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    background: linear-gradient(45deg, #ff5733, #c70039);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff5733;
+}
+
+/* 🔥 Floating Cards */
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    width: 250px;
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: float 3s infinite alternate ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff5733;
+}
+
+/* 🔥 Floating Animation */
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-10px); }
+}
+
+/* 🔥 Scroll Fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🌟 Footer Glowing */
+.footer {
+    background: #6a1b9a;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px #6a1b9a; }
+    to { box-shadow: 0 0 20px #ff5733; }
+}
+
+/* 🔥 Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1; /* Keeps it behind all content */
+    }
+    
+    .video-background video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: cover; /* Ensures it covers the screen */
+    }
+    
+    .content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 100px;
+    }
+    
+}

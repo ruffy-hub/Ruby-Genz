@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Management System</title>
+    <script src="{{ url_for('static', filename='newindex.js') }}"></script>
+</head>
+<body>
+    <h1>Event Management System</h1>
+
+    <!-- Display Scores -->
+    <h2>Scores</h2>
+    <div id="scores"></div>
+
+    <!-- Register Event -->
+    <h2>Register Event</h2>
+    <form id="registerForm">
+        <input type="text" id="name" placeholder="Event Name" required>
+        <input type="date" id="date" required>
+        <input type="text" id="location" placeholder="Location" required>
+        <input type="text" id="participants" placeholder="Participants" required>
+        <textarea id="rules" placeholder="Rules" required></textarea>
+        <button type="submit">Register</button>
+    </form>
+
+    <!-- Ask AI -->
+    <h2>Ask AI</h2>
+    <form id="askForm">
+        <input type="text" id="query" placeholder="Ask a question" required>
+        <button type="submit">Ask</button>
+    </form>
+    <div id="aiResponse"></div>
+</body>
+</html>
+    

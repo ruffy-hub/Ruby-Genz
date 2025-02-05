@@ -1,0 +1,241 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #1e3c72; /* Fallback background */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* 🔹 Live Video Background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* 🔹 Main Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* 🔹 Sidebar */
+.sidebar {
+    width: 240px;
+    background: linear-gradient(135deg, #000000, #1c1c1c);
+    color: #50d8d7;
+    padding: 20px;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.sidebar h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.sidebar h1:hover {
+    transform: scale(1.1);
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar nav ul li a:hover, 
+.sidebar nav ul li a.active {
+    background: #50d8d7;
+    color: #1c1c1c;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+/* 🔹 Main Content */
+main {
+    flex: 1;
+    padding: 40px;
+}
+
+/* 🔹 Buttons */
+.tabs button, 
+.filters button {
+    padding: 12px 18px;
+    margin: 5px;
+    border: none;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 25px;
+    transition: 0.4s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tabs button:hover, 
+.filters button:hover {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    transform: translateY(-3px);
+}
+
+/* 🔹 Cards Section */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* 🔹 Animated Cards */
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    padding: 15px;
+    color: #fff;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* 🔹 Pulsating Score Label */
+.score-label {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    font-weight: bold;
+    padding: 5px 12px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 5px rgba(255, 87, 34, 0.5); }
+    50% { transform: scale(1.1); box-shadow: 0 0 15px rgba(255, 87, 34, 0.8); }
+    100% { transform: scale(1); box-shadow: 0 0 5px rgba(255, 87, 34, 0.5); }
+}
+
+/* 🔹 Floating Score Display */
+.current-score {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(46, 204, 113, 0.9);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.8);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+  <!-- Video Background -->
+    <video class="video-background" autoplay loop muted>
+        <source src="your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h1>EngageAI</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Events</a></li>
+                    <li><a href="#">Organizations</a></li>
+                    <li><a href="#">Openings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <section class="cards">
+                <div class="card">
+                    <div class="score-label">+1 Score</div>
+                    <img src="event-placeholder.jpg" alt="Event">
+                    <h2>Sing</h2>
+                    <p>Honey for ears</p>
+                </div>
+            </section>
+        </main>
+
+        <div class="current-score">Current Score: 5</div>
+    </div>
+
+.current-score:hover {
+    transform: scale(1.1);
+}
+
+/* 🔹 Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .cards {
+        justify-content: center;
+    }
+}

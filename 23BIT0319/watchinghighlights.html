@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Highlights</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="watchinghighlights.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>College Highlights</h1>
+      <p>Click on the year to view the highlight video!</p>
+    </header>
+
+    <section class="year-buttons">
+      <button class="year-btn" data-year="2024">2024</button>
+      <button class="year-btn" data-year="2023">2023</button>
+      <button class="year-btn" data-year="2022">2022</button>
+      <button class="year-btn" data-year="2021">2021</button>
+    </section>
+
+    <section class="video-section">
+      <div class="video-container">
+        <iframe id="highlightIframe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+  </div>
+
+  <script src="watchinghighlights.js"></script>
+</body>
+</html>
+  
